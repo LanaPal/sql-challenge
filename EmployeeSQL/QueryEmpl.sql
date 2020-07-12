@@ -59,3 +59,15 @@ SELECT last_name, count(last_name) as "frequency count"
 FROM employees
 GROUP BY last_name
 ORDER BY "frequency count" DESC;
+
+-- MYSTERY QUERY Epilogue
+SELECT employees.emp_no, employees.last_name, employees.first_name, employees.sex, departments.dept_name, salaries.salary
+FROM employees
+JOIN dept_emp
+on employees.emp_no = dept_emp.emp_no
+JOIN departments 
+on dept_emp.dept_no = departments.dept_no
+JOIN salaries
+ON employees.emp_no = salaries.emp_no
+WHERE employees.emp_no = 499942;
+--Foolsday April from Development is here!!!
